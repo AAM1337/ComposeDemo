@@ -34,6 +34,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             ComposeDemoTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+
+                    DemoScreen(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -51,7 +53,7 @@ fun DemoText(message: String, fontSize: Float){
 fun DemoSlider(sliderPosition: Float, onPositionChange: (Float) -> Unit){
     Slider(
         modifier = Modifier.padding(10.dp),
-        valueRange = 20f..38f,
+        valueRange = 10f..110f,
         value = sliderPosition,
         onValueChange = onPositionChange
     )
